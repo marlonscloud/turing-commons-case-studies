@@ -7,6 +7,6 @@ mongo pw: Marlon123!
 
 MondoDb User:
 case-studies-turing
-Marlon123!
+7mhsKz4nRYk07Yg9
 
 mongodb+srv://case-studies-turing:Marlon123!@casestudies.8aibcpd.mongodb.net/test
