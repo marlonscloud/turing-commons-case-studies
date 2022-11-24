@@ -32,7 +32,7 @@ const deleteCaseStudy = async (req, res) => {
 const createCase = async (req, res) => {
     const { heading, subheading, overview, keyConsiderations, prompts, people, datasheet, featuredImage } = req.body;
 
-    const newcase = Case.create({
+    const newcase = await Case.create({
         heading,
         subheading,
         overview,
@@ -43,14 +43,16 @@ const createCase = async (req, res) => {
         featuredImage
     });
 
-    if (newcase) {
-        res.status(201).json({ id: newcase._id, case: newcase });
-    } 
-    else 
-    {
-        res.status(400);
-        throw new Error("Invalid case data");
-    }
+    console.log(newcase)
+
+    // if (newcase) {
+    //     res.status(201).json(newcase);
+    // } 
+    // else 
+    // {
+    //     res.status(400);
+    //     throw new Error("Invalid case data");
+    // }
 }
 
 module.exports = {
