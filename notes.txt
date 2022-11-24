@@ -14,4 +14,4 @@ mongodb+srv://case-studies-turing:7mhsKz4nRYk07Yg9@casestudies.8aibcpd.mongodb.n
 mongodb+srv://<username>:<password>@casestudies.8aibcpd.mongodb.net/?retryWrites=true&w=majority
 
 DB Users
-Rich - 5ucNGnoIAfKKCXyT
+Rich - 2AQJzTgnh6UnKQbu
