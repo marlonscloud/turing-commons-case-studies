@@ -13,8 +13,8 @@ const getCaseStudies = async (req, res) => {
 
 const getSingleCaseStudy = async (req, res) => {
     try {
-        const caseStudy = caseStudies.filter(x => x.id == req.params.id)
-        return res.json(caseStudy)
+        const singleCase = await Case.findById(req.params.id)
+        return res.json(singleCase)
     } catch (error) {
         return res.send(error)
     }
@@ -43,16 +43,14 @@ const createCase = async (req, res) => {
         featuredImage
     });
 
-    console.log(newcase)
-
-    // if (newcase) {
-    //     res.status(201).json(newcase);
-    // } 
-    // else 
-    // {
-    //     res.status(400);
-    //     throw new Error("Invalid case data");
-    // }
+    if (newcase) {
+        res.status(201).json(newcase);
+    } 
+    else 
+    {
+        res.status(400);
+        throw new Error("Invalid case data");
+    }
 }
 
 module.exports = {
