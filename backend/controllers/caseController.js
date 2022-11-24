@@ -17,7 +17,18 @@ const getSingleCaseStudy = async (req, res) => {
     }
 }
 
+const updateCaseStudy = async (req, res) => {
+    return res.send('Update Case Study')
+}
+
+
+const deleteCaseStudy = async (req, res) => {
+    return res.send('Delete Case Study')
+}
+
 module.exports = {
     getCaseStudies, 
-    getSingleCaseStudy
+    getSingleCaseStudy,
+    updateCaseStudy,
+    deleteCaseStudy
 }
