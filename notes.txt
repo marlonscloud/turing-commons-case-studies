@@ -1,2 +1,4 @@
 /api/cases/:id
 npm run dev
+
+case-studies-turing-project@gmail.com
