@@ -21,9 +21,26 @@ const getSingleCaseStudy = async (req, res) => {
 }
 
 const updateCaseStudy = async (req, res) => {
-    return res.send('Update Case Study')
-}
+    const c = await Case.findById(req.params.id)
 
+    if(c) {
+        c.heading = req.body.heading || c.heading
+        c.subheading = req.body.subheading || c.subheading
+        c.overview = req.body.overview || c.overview
+        c.keyConsiderations = req.body.keyConsiderations || c.keyConsiderations
+        c.prompts = req.body.prompts || c.prompts
+        c.people = req.body.people || c.people
+        c.datasheet = req.body.datasheet || c.datasheet
+        c.featuredImage = req.body.featuredImage || c.featuredImage
+
+        const updatedCase = await c.save()
+
+        res.json(updatedCase);
+    } else {
+        res.status(404);
+        throw new Error("Case Not Found");
+      }
+}
 
 const deleteCaseStudy = async (req, res) => {
     return res.send('Delete Case Study')
