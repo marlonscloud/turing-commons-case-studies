@@ -1,4 +1,12 @@
 /api/cases/:id
 npm run dev
 
-case-studies-turing-project@gmail.com
+case.studies.turing@gmail.com
+email pw: caseStudiesMarlon
+mongo pw: Marlon123!
+
+MondoDb User:
+case-studies-turing
+Marlon123!
+
+mongodb+srv://case-studies-turing:Marlon123!@casestudies.8aibcpd.mongodb.net/test
