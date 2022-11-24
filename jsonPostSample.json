@@ -1,44 +1,48 @@
 {
-    "heading": "Decision Support System MEH MEH TEST 2",
-    "subheading": "Using AI to help psychiatrists assess patients",
-    "overview": "Lorem ipsum dolor sit amet consectetur adipiscing elit, urna consequat felis vehicula class ultricies mollis dictumst, aenean non a in donec nulla. Phasellus ante pellentesque erat cum risus consequat imperdiet aliquam, integer placerat et turpis mi eros nec lobortis taciti, vehicula nisl litora tellus ligula porttitor metus.<br/>Vivamus integer non suscipit taciti mus etiam at primis tempor sagittis sit, euismod libero facilisi aptent elementum felis blandit cursus gravida sociis erat ante, eleifend lectus nullam dapibus netus feugiat curae curabitur est ad. Massa curae fringilla porttitor quam sollicitudin iaculis aptent leo ligula euismod dictumst, orci penatibus mauris eros etiam praesent erat volutpat posuere hac. Metus fringilla nec ullamcorper odio aliquam lacinia conubia mauris tempor, etiam ultricies proin quisque lectus sociis id tristique, integer phasellus taciti pretium adipiscing tortor sagittis ligula.<br/>Mollis pretium lorem primis senectus habitasse lectus scelerisque donec, ultricies tortor suspendisse adipiscing fusce morbi volutpat pellentesque, consectetur mi risus molestie curae malesuada cum. Dignissim lacus convallis massa mauris enim ad mattis magnis senectus montes, mollis taciti phasellus accumsan bibendum semper blandit suspendisse faucibus nibh est, metus lobortis morbi cras magna vivamus per risus fermentum. Dapibus imperdiet praesent magnis ridiculus congue gravida curabitur dictum sagittis, enim et magna sit inceptos sodales parturient pharetra mollis, aenean vel nostra tellus commodo pretium sapien sociosqu.",
+    "heading": "Peer to Peer Support",
+    "subheading": "Using machine learning to identify individuals who are at risk of harm",
+    "overview": "<p>A for-profit company has developed a peer-to-peer support<br />service for individuals wishing to share experiences and seek<br />advice from others with lived experiences of mental health<br />issues.</p> <p><br />This system is marketed to institutions such as schools,<br />universities, and workplaces as a tool which can improve wellbeing as well as productivity.</p> <p><br />The appeal of these peer-to-peer support platforms is<br />significantly dependent on the fact users feel comfortable<br />sharing personal details thanks to their anonymity. Therefore,<br />all users are (by default) anonymous on the site and, in the vast<br />majority of cases, can message one another free from outside<br />intervention.</p> <p><br />However, when certain combinations of &lsquo;trigger words&rsquo; are<br />entered into the system, indicating a user is at risk of causing<br />harm to themselves or others, the incident is escalated. In these<br />cases, the institutional mental health lead is notified, and<br />anonymity is broken. The individual is then given personal<br />assistance and intervention.</p><p><br />Consent for this platform does indicate that anonymity may be<br />breached in extreme scenarios, but it does not detail the specific<br />triggers of case escalation. Nor does it detail the means by<br />which algorithmic technqiues are used to identity &ldquo;at risk&rdquo; users.</p>",
     "keyConsiderations": [
-        "The system is designed to support psychiatrists in their work.",
-        "Are there ways in the which the system could negatively impact the services."
+        "Universities have multiple motivations for adopting these systems.",
+        "On the one hand, they are genuinely interested in improving member wellbeing. However, these systems also claim to help them improve productivity and at times can improve institutional reputation. "
     ],
     "prompts": [
         {
             "id": 1,
-            "text": "Sample Text"
+            "text": "How do you think the developers of this service should navigate the trade-off between privacy-preserving anonymity and safety-conscious escalation of particular cases?"
         },
         {
             "id": 2,
-            "text": "Sample Text"
+            "text": "Would it be preferable for there to be no monitoring and just peer-to-peer support? "
         },
         {
             "id": 3,
-            "text": "Sample Text"
+            "text": "Do the power relations present in institutional settings impact your views on whether breaking anonymity is justifiable? Would it be preferable for the individual’s identity to be disclosed to a third-party psychiatrist rather than the institution? "
         }
     ],
     "datasheet": [
         {
-            "category": "Sample Category",
-            "details": "Lorem ipsum dolor sit amet consectetur adipiscing elit, urna consequat felis vehicula class ultricies mollis dictumst, aenean non a in donec nulla. Phasellus ante pellentesque erat cum risus consequat imperdiet aliquam, integer placerat et turpis mi eros nec lobortis taciti, vehicula nisl litora tellus ligula porttitor metus"
+            "category": "Available data",
+            "details": "<ul><li>Transcripts</li><li>Meta-data</li><li>Additional</li><li>Post conversation</li></ul>"
         },
         {
-            "category": "Sample Category",
-            "details": "Lorem ipsum dolor sit amet consectetur adipiscing elit, urna consequat felis vehicula class ultricies mollis dictumst, aenean non a in donec nulla. Phasellus ante pellentesque erat cum risus consequat imperdiet aliquam, integer placerat et turpis mi eros nec lobortis taciti, vehicula nisl litora tellus ligula porttitor metus"
+            "category": "Analysis techniques",
+            "details": "<ul><li>Transcripts</li><li>Meta-data</li><li>Additional</li><li>Post conversation</li></ul>"
         }
     ],
     "people": [
         {
             "id": 1,
-            "text": "Patients"
+            "text": "Users of support forum"
         },
         {
             "id": 2,
-            "text": "Psychiatrists"
+            "text": "For-profit company"
+        },
+        {
+            "id": 3,
+            "text": "University administrators"
         }
     ],
-    "featuredImage": "http://localhost:5000"
+    "featuredImage": "https://media.istockphoto.com/id/471787321/photo/clifton-suspension-bridge-river-avon-bristol-england.jpg?b=1&s=170667a&w=0&k=20&c=tTYYp4-9BETGhWN5jQaa8BT8v2WeIMLZZituipYS4q0="
 }
