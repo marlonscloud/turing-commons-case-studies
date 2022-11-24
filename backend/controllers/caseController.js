@@ -1,8 +1,12 @@
-const { caseStudies } = require('../data')
+const { caseStudies } = require('../data');
+const Case = require('../models/caseStudies');
+const Case = require('../models/caseStudies');
 
 const getCaseStudies = async (req, res) => {
     try {
-        return res.json(caseStudies)
+        // return res.json(caseStudies)
+        const cases = await Case.find({});
+        return res.json(cases);
     } catch (error) {
         return res.send(error)
     }
@@ -26,9 +30,27 @@ const deleteCaseStudy = async (req, res) => {
     return res.send('Delete Case Study')
 }
 
+const createCase = async (req, res) => {
+    const { title } = req.body;
+
+    const newcase = Case.create({
+        name: title
+    });
+
+    if (newcase) {
+        res.status(201).json(newcase);
+    } 
+    else 
+    {
+        res.status(400);
+        throw new Error("Invalid case data");
+    }
+}
+
 module.exports = {
     getCaseStudies, 
     getSingleCaseStudy,
     updateCaseStudy,
-    deleteCaseStudy
+    deleteCaseStudy,
+    createCase
 }
