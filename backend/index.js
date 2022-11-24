@@ -1,14 +1,16 @@
 const express = require('express')
 const path = require('path')
 const dotenv = require('dotenv')
+const connectDB = require('./config/db')
 
 // Routes
 const caseRoutes = require('./routes/caseRoutes')
 
 dotenv.config()
 
-const app = express();
+connectDB()
 
+const app = express();
 app.use(express.json())
 
 // Set up router for routes

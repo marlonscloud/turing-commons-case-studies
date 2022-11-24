@@ -9,4 +9,9 @@ MondoDb User:
 case-studies-turing
 7mhsKz4nRYk07Yg9
 
-mongodb+srv://case-studies-turing:Marlon123!@casestudies.8aibcpd.mongodb.net/test
+mongodb+srv://case-studies-turing:7mhsKz4nRYk07Yg9@casestudies.8aibcpd.mongodb.net/test
+
+mongodb+srv://<username>:<password>@casestudies.8aibcpd.mongodb.net/?retryWrites=true&w=majority
+
+DB Users
+Rich - 5ucNGnoIAfKKCXyT
