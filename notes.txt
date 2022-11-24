@@ -1,0 +1,2 @@
+/api/cases/:id
+npm run dev
