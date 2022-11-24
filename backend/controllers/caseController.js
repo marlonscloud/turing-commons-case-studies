@@ -1,6 +1,5 @@
 const { caseStudies } = require('../data');
 const Case = require('../models/caseStudies');
-const Case = require('../models/caseStudies');
 
 const getCaseStudies = async (req, res) => {
     try {
@@ -31,14 +30,21 @@ const deleteCaseStudy = async (req, res) => {
 }
 
 const createCase = async (req, res) => {
-    const { title } = req.body;
+    const { heading, subheading, overview, keyConsiderations, prompts, people, datasheet, featuredImage } = req.body;
 
     const newcase = Case.create({
-        name: title
+        heading,
+        subheading,
+        overview,
+        keyConsiderations,
+        prompts,
+        people,
+        datasheet,
+        featuredImage
     });
 
     if (newcase) {
-        res.status(201).json(newcase);
+        res.status(201).json({ id: newcase._id, case: newcase });
     } 
     else 
     {
