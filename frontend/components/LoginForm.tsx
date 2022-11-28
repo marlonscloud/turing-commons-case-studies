@@ -1,9 +1,13 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { login } from '../slices/userSlice'
 
 const LoginForm = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [errorMessage, setErrorMessage] = useState("")
+
+    const dispatch = useDispatch()
 
     const handleLogin = async () => {
         if(email == "" || password == "") {
@@ -17,8 +21,16 @@ const LoginForm = () => {
         if(error) 
             setErrorMessage(error)
         
-        if(data) 
-            console.log(data)
+        if(data) {
+            dispatch(login({
+                id: data.id,
+                name: data.name,
+                email: data.email,
+                isAdmin: data.isAdmin,
+                token: data.token,
+                imageUrl:'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+            }))
+        }
     }
 
     const Login = async( email: string, password: string) => {
@@ -44,7 +56,7 @@ const LoginForm = () => {
             <input
                 type="text"
                 className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                id="exampleFormControlInput1"
+                id="email"
                 placeholder="Email Address"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -54,7 +66,7 @@ const LoginForm = () => {
             <input
                 type="password"
                 className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                id="exampleFormControlInput1"
+                id="password"
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
