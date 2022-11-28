@@ -5,6 +5,7 @@ const connectDB = require('./config/db')
 
 // Routes
 const caseRoutes = require('./routes/caseRoutes')
+const userRoutes = require('./routes/userRoutes')
 
 dotenv.config()
 
@@ -21,6 +22,7 @@ app.use("/", router);
 
 // Routes
 app.use('/api/cases', caseRoutes.routes)
+app.use('/api/users', userRoutes.routes)
 
 router.get("/", function (req, res) {
   const __dirname = path.resolve();
