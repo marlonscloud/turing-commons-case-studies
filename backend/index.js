@@ -2,6 +2,7 @@ const express = require('express')
 const path = require('path')
 const dotenv = require('dotenv')
 const connectDB = require('./config/db')
+const colors = require('colors');
 const { notFound, errorHandler } = require('./middleware/errorMiddleware')
 
 // Routes
@@ -34,4 +35,4 @@ router.get("/", function (req, res) {
 app.use(notFound);
 app.use(errorHandler);
 
-app.listen(process.env.PORT, () => console.log(`Server is listening on http://localhost:${process.env.PORT}`));
+app.listen(process.env.PORT, () => console.log(`Server is listening on http://localhost:${process.env.PORT}`.magenta.bold));
