@@ -3,6 +3,7 @@ const path = require('path')
 const dotenv = require('dotenv')
 const connectDB = require('./config/db')
 const colors = require('colors');
+const cors = require('cors')
 const { notFound, errorHandler } = require('./middleware/errorMiddleware')
 
 // Routes
@@ -15,6 +16,8 @@ connectDB()
 
 const app = express();
 app.use(express.json())
+
+app.use(cors())
 
 // Set up router for routes
 const router = express.Router();
