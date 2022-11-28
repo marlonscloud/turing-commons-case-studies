@@ -2,6 +2,7 @@ const express = require('express')
 const path = require('path')
 const dotenv = require('dotenv')
 const connectDB = require('./config/db')
+const { notFound, errorHandler } = require('./middleware/errorMiddleware')
 
 // Routes
 const caseRoutes = require('./routes/caseRoutes')
@@ -28,5 +29,9 @@ router.get("/", function (req, res) {
   const __dirname = path.resolve();
   res.sendFile(path.join(__dirname + "/index.html"));
 });
+
+// Error Middleware
+app.use(notFound);
+app.use(errorHandler);
 
 app.listen(process.env.PORT, () => console.log(`Server is listening on http://localhost:${process.env.PORT}`));
