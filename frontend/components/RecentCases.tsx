@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import moment from 'moment'
+import Link from 'next/link'
 
 const RecentCases = () => {
     const [cases, setCases] = useState([])
@@ -100,7 +101,7 @@ const RecentCases = () => {
                 </thead>
                 <tbody>
                     {cases.length > 0 && cases.map((c:any, i) => (
-                        <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                        <tr key={i} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                             <th scope="row" className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                 <div className='flex justify-start items-center gap-4'>
                                     <div className="flex-shrink-0">
@@ -119,7 +120,11 @@ const RecentCases = () => {
                                 {moment(c.createdAt).format('DD/MM/YYYY')}
                             </td>
                             <td className="py-4 px-6">
-                                <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                <Link href={`/cases/${c._id}`}>
+                                    <div className='font-medium text-blue-600 dark:text-blue-500 hover:underline'>
+                                        Edit
+                                    </div>
+                                </Link>
                             </td>
                         </tr>
                     ))}
