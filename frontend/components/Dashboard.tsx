@@ -1,6 +1,7 @@
 import RecentCases from './RecentCases'
 import RecentPosts from './RecentPosts'
 import Navbar from './Navbar'
+import Header from './Header'
 
 // const user = {
 //   name: 'Tom Cook',
@@ -12,11 +13,12 @@ import Navbar from './Navbar'
 export default function Dashboard(user: any) {
   return (
     <>
-      <header className="bg-white shadow">
+      <Header heading="Dashboard" back={false} />
+      {/* <header className="bg-white shadow">
         <div className="mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl font-bold tracking-tight text-gray-900">Dashboard</h1>
         </div>
-      </header>
+      </header> */}
       <main>
         <div className="mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8 flex justify-start gap-4 flex-wrap">
           <RecentCases />
