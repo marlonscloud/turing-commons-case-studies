@@ -3,6 +3,7 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { useDispatch } from 'react-redux'
 import { logout } from '../slices/userSlice'
+import { profileIcon, settingsIcon } from '../assets/icons'
 
 const Navbar = () => {
     const navigation = [
@@ -13,8 +14,8 @@ const Navbar = () => {
     ]
 
     const userNavigation = [
-        { name: 'Your Profile', href: '#' },
-        { name: 'Settings', href: '#' }
+        { icon: profileIcon, name: 'Your Profile', href: '#' },
+        { icon: settingsIcon, name: 'Settings', href: '#' }
     ]
 
     function classNames(...classes: any) {
@@ -82,13 +83,13 @@ const Navbar = () => {
                             </Menu.Button>
                             </div>
                             <Transition
-                            as={Fragment}
-                            enter="transition ease-out duration-100"
-                            enterFrom="transform opacity-0 scale-95"
-                            enterTo="transform opacity-100 scale-100"
-                            leave="transition ease-in duration-75"
-                            leaveFrom="transform opacity-100 scale-100"
-                            leaveTo="transform opacity-0 scale-95"
+                                as={Fragment}
+                                enter="transition ease-out duration-100"
+                                enterFrom="transform opacity-0 scale-95"
+                                enterTo="transform opacity-100 scale-100"
+                                leave="transition ease-in duration-75"
+                                leaveFrom="transform opacity-100 scale-100"
+                                leaveTo="transform opacity-0 scale-95"
                             >
                             <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                                 {userNavigation.map((item) => (
@@ -98,15 +99,20 @@ const Navbar = () => {
                                         href={item.href}
                                         className={classNames(
                                         active ? 'bg-gray-100' : '',
-                                        'block px-4 py-2 text-sm text-gray-700'
+                                        'px-4 py-2 text-sm text-gray-700 gap-2 flex items-center'
                                         )}
                                     >
-                                        {item.name}
+                                        {item.icon}{item.name}
                                     </a>
                                     )}
                                 </Menu.Item>
                                 ))}
-                                <a onClick={handleLogout} className='block px-4 py-2 text-sm text-gray-700 hover:cursor-pointer hover:bg-gray-100'>Sign Out</a>
+                                <a onClick={handleLogout} className='gap-2 flex items-center px-4 py-2 text-sm text-red-600 hover:cursor-pointer hover:bg-gray-100'>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
+                                    </svg>
+                                    Sign Out
+                                </a>
                             </Menu.Items>
                             </Transition>
                         </Menu>
@@ -168,7 +174,7 @@ const Navbar = () => {
                             href={item.href}
                             className="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-emerald-700 hover:text-white"
                         >
-                            {item.name}
+                            {item.icon}{item.name}
                         </Disclosure.Button>
                         ))}
                     </div>
