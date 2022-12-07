@@ -7,10 +7,8 @@ import { profileIcon, settingsIcon } from '../assets/icons'
 
 const Navbar = () => {
     const navigation = [
-        { name: 'Dashboard', href: '#', current: true },
-        { name: 'Case Studies', href: '#', current: false },
-        { name: 'Courses', href: '#', current: false },
-        { name: 'Posts', href: '#', current: false }
+        { name: 'Case Studies', href: '#', current: true },
+        { name: 'Users', href: '#', current: false },
     ]
 
     const userNavigation = [

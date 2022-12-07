@@ -1,11 +1,19 @@
 import Layout from "../../components/Layout";
 import Link from "next/link";
 import Header from "../../components/Header";
-
-// const user = useSelector(selectUser)
+import TextEditor from "../../components/TextEditor";
+import RichTextEditor from "react-rte";
+import { useState } from "react";
 
 export default function NewCase() {  
     const categories = ['Analysis techniques', 'Available data']
+    const [value, setValue] = useState(RichTextEditor.createEmptyValue());
+
+    const handleOnChange = (value: any) => {
+        setValue(value);
+        console.log(value.toString('html'));
+    }
+
     return (
         <Layout>
             <Header heading="Case Study" subheading="New" back={true} />
@@ -35,12 +43,13 @@ export default function NewCase() {
                     </div>
                     <div className="mb-6">
                         <label htmlFor="overview" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Overview</label>
-                        <textarea 
+                        {/* <textarea 
                         id="overview" 
                         rows={6} 
                         className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
                         placeholder=""
-                        />
+                        /> */}
+                        <RichTextEditor value={value} onChange={handleOnChange} className="h-64" />
                     </div>
                     <div className='mb-6'>
                         <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Key Considerations</label>

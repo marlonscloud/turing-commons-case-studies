@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import React from 'react'
 
-const Header = ({ heading, subheading, back }:any) => {
+const Header = ({ heading, subheading, back, btn }:any) => {
+    console.log(btn)
   return (
     <header className="bg-white shadow">
         <div className="mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8 flex gap-8 justify-start items-center">
@@ -19,8 +20,22 @@ const Header = ({ heading, subheading, back }:any) => {
 
             <div>
                 <p className='text-xs tracking-widest uppercase mb-1'>{subheading}</p>
-                <h1 className="text-2xl font-normal tracking-tight text-gray-900">{heading}</h1>
+                <h1 className="text-2xl font-semibold tracking-tight text-gray-900">{heading}</h1>
             </div>
+
+            {btn && (
+                <div>
+                    <Link href={btn.link}>
+                        <div className='flex justify-start items-center gap-2 text-slate-600 bg-slate-50 hover:bg-emerald-500 hover:text-white hover:shadow-md focus:ring-4 focus:outline-none focus:ring-blue-300 font-normal rounded-md text-sm py-2 px-3 text-center'>
+                        {/* <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 font-bold">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                        </svg> */}
+                        {btn.text}
+                        </div>
+                    </Link>
+                </div>
+            )}
+            
         </div>
     </header>
   )
