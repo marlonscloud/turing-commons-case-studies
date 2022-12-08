@@ -54,11 +54,12 @@ const deleteCaseStudy = async (req, res) => {
 }
 
 const createCase = async (req, res) => {
-    const { heading, subheading, overview, keyConsiderations, prompts, people, datasheet, featuredImage } = req.body;
+    const { heading, subheading, slug, overview, keyConsiderations, prompts, people, datasheet, featuredImage } = req.body;
 
     const newcase = await Case.create({
         heading,
         subheading,
+        slug,
         overview,
         keyConsiderations,
         prompts,

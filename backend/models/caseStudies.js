@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
 
-const textArraySchema = mongoose.Schema({ id: { type: Number }, text: { type: String } })
+const textArraySchema = mongoose.Schema({ value: { type: String } })
 const datasheetSchema = mongoose.Schema({ category: { type: String }, details: { type: String } })
 const caseSchema = mongoose.Schema(
   {
@@ -12,13 +12,16 @@ const caseSchema = mongoose.Schema(
         type: String,
         required: true
     },
+    slug: {
+      type: String,
+      required: true
+    },
     overview: {
         type: String,
         required: true
     }, 
     keyConsiderations: {
-        type: [String],
-        required: true
+        type: [textArraySchema]
     },
     prompts: {
         type: [textArraySchema]
