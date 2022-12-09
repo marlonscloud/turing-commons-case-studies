@@ -39,7 +39,7 @@ const updateCaseStudy = async (req, res) => {
     } else {
         res.status(404);
         throw new Error("Case Not Found");
-      }
+    }
 }
 
 const deleteCaseStudy = async (req, res) => {
