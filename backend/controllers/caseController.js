@@ -43,13 +43,17 @@ const updateCaseStudy = async (req, res) => {
 }
 
 const deleteCaseStudy = async (req, res) => {
-    const deleteCase = await Case.findByIdAndDelete(req.params.id)
-
-    if(deleteCase) {
-        res.send('Case Study Deleted!')
-    } else {
-        res.status(404);
-        throw new Error("Case Not Found");
+    try {
+        const c = await Case.findById(req.params.id)
+        if(c) {
+            await c.remove()
+            res.json({ message: 'Case Study Removed'})
+        } else {
+            res.status(404);
+            throw new Error("Case Study not found");
+        }
+    } catch (error) {
+        res.status(500).json({ error });
     }
 }
 

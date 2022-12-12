@@ -5,7 +5,7 @@ const { getCaseStudies, getSingleCaseStudy, updateCaseStudy, deleteCaseStudy, cr
 const { protect, admin } = require('../middleware/authMiddleware')
 
 router.route('/').get(getCaseStudies).post(protect, createCase)
-router.route('/:id').get(getSingleCaseStudy).put(protect, updateCaseStudy).delete(protect, admin, deleteCaseStudy)
+router.route('/:id').get(getSingleCaseStudy).put(protect, updateCaseStudy).delete(protect, deleteCaseStudy)
 
 module.exports = {
     routes: router
