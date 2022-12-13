@@ -20,6 +20,15 @@ const getSingleCaseStudy = async (req, res) => {
     }
 }
 
+const getSingleCaseStudyBySlug = async (req, res) => {
+    try {
+        const singleCase = await Case.find({ slug: req.params.slug }).exec()
+        return res.json(singleCase)
+    } catch (error) {
+        return res.send(error)
+    }
+}
+
 const updateCaseStudy = async (req, res) => {
     const c = await Case.findById(req.params.id)
 
@@ -86,6 +95,7 @@ const createCase = async (req, res) => {
 module.exports = {
     getCaseStudies, 
     getSingleCaseStudy,
+    getSingleCaseStudyBySlug,
     updateCaseStudy,
     deleteCaseStudy,
     createCase
