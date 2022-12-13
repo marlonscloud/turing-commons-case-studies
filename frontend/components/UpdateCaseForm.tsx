@@ -30,6 +30,7 @@ const UpdateCaseForm = ({ caseStudy }:any) => {
 
     const setSlug = (text:string) => {
         let s = text.replaceAll(' ', '-').toLowerCase()
+        console.log('New Slug |', s)
         return s
     }
 
@@ -66,7 +67,7 @@ const UpdateCaseForm = ({ caseStudy }:any) => {
             console.log(formik.values)
             const { heading, subheading, featureImage, overview, keyConsiderations, people, prompts, datasheet } = formik.values
             
-            const caseUpdated = await updateCase({
+            const newCaseDetails = {
                 heading,
                 subheading,
                 slug: setSlug(heading),
@@ -76,7 +77,9 @@ const UpdateCaseForm = ({ caseStudy }:any) => {
                 datasheet,
                 people,
                 featuredImage: featureImage
-            })
+            }
+
+            const caseUpdated = await updateCase(newCaseDetails)
 
             if (caseUpdated) {
                 notify("Case Updated Successfully!")                

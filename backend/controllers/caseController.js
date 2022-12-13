@@ -26,6 +26,7 @@ const updateCaseStudy = async (req, res) => {
     if(c) {
         c.heading = req.body.heading || c.heading
         c.subheading = req.body.subheading || c.subheading
+        c.slug = req.body.slug || c.slug
         c.overview = req.body.overview || c.overview
         c.keyConsiderations = req.body.keyConsiderations || c.keyConsiderations
         c.prompts = req.body.prompts || c.prompts
