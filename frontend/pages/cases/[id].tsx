@@ -1,26 +1,33 @@
-import Link from 'next/link';
 import React from 'react'
+import { useSelector } from 'react-redux';
 import Header from '../../components/Header';
 import Layout from '../../components/Layout';
-import Navbar from '../../components/Navbar';
 import UpdateCaseForm from '../../components/UpdateCaseForm';
+import { selectUser } from '../../slices/userSlice';
 
 const CaseStudy = ({caseStudy}:any) => {
-  const categories = [
-    'Analysis techniques',
-    'Available data'
-  ]
+  const user = useSelector(selectUser)
+
+  if(!user) {
+    window.location.href = "/"
+  }
+
   return (
-    <Layout>
-      <Header heading={caseStudy.heading} subheading="Editing" back={true} />
-      <main>
-        <div className="mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8 flex justify-start gap-4 flex-wrap">
-          <div className="w-full p-4 bg-white border rounded-lg shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">              
-            <UpdateCaseForm caseStudy={caseStudy}/>
-          </div>
-        </div>
-      </main>
-    </Layout>
+    <>
+      {user && (
+        <Layout>
+          <Header heading={caseStudy.heading} subheading="Editing" back={true} />
+          <main>
+            <div className="mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8 flex justify-start gap-4 flex-wrap">
+              <div className="w-full p-4 bg-white border rounded-lg shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">              
+                <UpdateCaseForm caseStudy={caseStudy}/>
+              </div>
+            </div>
+          </main>
+        </Layout>
+      )}
+    </>
+    
   )
 }
 

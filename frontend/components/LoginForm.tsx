@@ -50,7 +50,7 @@ const LoginForm = () => {
     }
 
     return (
-        <form className='p-2 sm:p-0'>
+        <form className='p-4 sm:p-0'>
             <p className="mb-4">Please login to your account</p>
             <div className="mb-4">
             <input
