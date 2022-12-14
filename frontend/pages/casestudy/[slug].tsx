@@ -44,7 +44,7 @@ const CaseStudy = ({caseStudy}:any) => {
           <div className="px-6 py-12 md:px-12 text-gray-800 text-center lg:text-left">
             <div className="container mx-auto xl:px-32">
               <div className="grid lg:grid-cols-2 gap-12 items-center justify-start">
-                <div className="mt-12 lg:mt-0">
+                <div className="mt-12 lg:mt-0 p-8">
                   <h1 className="text-6xl font-bold  tracking-tight mb-4">{heading}</h1>
                   <h1 className="text-4xl font-semibold text-emerald-500 tracking-tight mb-8">{subheading}</h1>
                   <p>{overview}</p>
@@ -62,7 +62,7 @@ const CaseStudy = ({caseStudy}:any) => {
             </div>
           </div>
 
-          <div className="bg-white py-24 sm:py-32 lg:py-40">
+          <div className="py-24 sm:py-32 lg:py-40">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
               <div className="sm:text-center">
                 <h2 className="text-lg font-semibold leading-8 text-emerald-600">Key Considerations</h2>

@@ -7,7 +7,7 @@ const Login = () => {
       <div className="h-full"> 
       {/* container py-12 px-6 h-full */}
         <div className="flex justify-center items-center flex-wrap h-full g-6 text-gray-800">
-          <div className="w-full h-screen p-8 md:p-24 sm:w-2/3">
+          <div className="w-full h-screen p-8 md:p-24 sm:w-10/12">
             <div className="flex bg-white shadow-lg rounded-lg">
               <div className="lg:flex lg:flex-wrap g-0">
                 <div className="lg:w-6/12 px-4 md:px-0">

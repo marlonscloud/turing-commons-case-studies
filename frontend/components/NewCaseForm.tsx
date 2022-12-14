@@ -94,9 +94,9 @@ const NewCaseForm = () => {
             }
         },
         validationSchema: yup.object({
-            // heading: yup.string().trim().required('Heading is required'),
-            // subheading: yup.string().trim().required('Subheading is required'),
-            // overview: yup.string().trim().required('Overview is required'),
+            heading: yup.string().trim().required('Heading is required'),
+            subheading: yup.string().trim().required('Subheading is required'),
+            overview: yup.string().trim().required('Overview is required'),
             // keyConsiderations: yup.array().required('Please provide atleast one'),
             // people: yup.array().required('Please provide atleast one'),
             // prompts: yup.array().required('Please provide atleast one'),
