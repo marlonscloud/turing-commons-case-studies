@@ -8,6 +8,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const UpdateUserForm = ({ userData }:any) => {
+    console.log(userData)
     const user = useSelector(selectUser)   
 
     const notify = (message:string) => { toast.success(message, {
@@ -95,7 +96,7 @@ const UpdateUserForm = ({ userData }:any) => {
                         ) : null}
                     </div>
                     <div className="mb-6 w-full">
-                        <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+                        <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">New Password</label>
                         <input 
                             type="text" 
                             id="password" 

@@ -102,6 +102,7 @@ const updateUser = asyncHandler(async (req, res) => {
     user.email = req.body.email || user.email;
     user.imageUrl = req.body.imageUrl || user.imageUrl;
     user.roles = req.body.roles || user.roles;
+    user.password = req.body.password || user.password;
     // user.isAdmin = req.body.isAdmin || user.isAdmin;
 
     const updatedUser = await user.save();
