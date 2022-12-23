@@ -68,7 +68,7 @@ const UpdateCaseForm = ({ caseStudy }:any) => {
             redirect: 'follow'
         };
 
-        const response = await fetch(`http://localhost:5000/api/cases/${_id}`, requestOptions)
+        const response = await fetch(`https://turing-case-studies-api.azurewebsites.net/api/cases/${_id}`, requestOptions)
         const result = await response.json()
         return result          
     }

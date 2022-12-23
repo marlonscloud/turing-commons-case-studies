@@ -31,7 +31,7 @@ const NewUserForm = () => {
             redirect: 'follow'
         };
 
-        const response = await fetch("http://localhost:5000/api/users", requestOptions)
+        const response = await fetch("https://turing-case-studies-api.azurewebsites.net/api/users", requestOptions)
         const result = await response.json()
         return result
     }

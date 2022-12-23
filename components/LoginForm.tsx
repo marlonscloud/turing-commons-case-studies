@@ -45,7 +45,7 @@ const LoginForm = () => {
             redirect: 'follow'
         };
 
-        const response = await fetch("http://localhost:5000/api/users/login", params)
+        const response = await fetch("https://turing-case-studies-api.azurewebsites.net/api/users/login", params)
         const result = await response.json()
         console.log(result)
         return result

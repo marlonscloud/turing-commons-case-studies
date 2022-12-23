@@ -38,3 +38,7 @@ API
 GET Cases endpoints:
 - http://localhost:5000/api/cases
 - http://localhost:5000/api/cases/casestudy/peer-to-peer-support (slug name)
+
+
+Azure API
+https://turing-case-studies-api.azurewebsites.net

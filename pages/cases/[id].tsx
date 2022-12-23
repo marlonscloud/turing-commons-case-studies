@@ -37,7 +37,7 @@ const fetchCaseStudies = async () => {
         redirect: 'follow'
       };
       
-    const response = await fetch("http://localhost:5000/api/cases", requestOptions)
+    const response = await fetch("https://turing-case-studies-api.azurewebsites.net/api/cases", requestOptions)
     const result = await response.json()
     return result
 }
@@ -48,7 +48,7 @@ const fetchCaseStudy = async (id:any) => {
       redirect: 'follow'
     };
     
-  const response = await fetch(`http://localhost:5000/api/cases/${id}`, requestOptions)
+  const response = await fetch(`https://turing-case-studies-api.azurewebsites.net/api/cases/${id}`, requestOptions)
   const result = await response.json()
   return result
 }
