@@ -1,8 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
-import Header from '../../components/Header';
-import Layout from '../../components/Layout';
-import UpdateCaseForm from '../../components/UpdateCaseForm';
+import DOMPurify from "dompurify";
+import parse from "html-react-parser";
 import { selectUser } from '../../slices/userSlice';
 
 const CaseStudy = ({caseStudy}:any) => {
@@ -14,6 +13,10 @@ const CaseStudy = ({caseStudy}:any) => {
   }
 
   const { heading, subheading, overview, featuredImage, keyConsiderations, prompts, people, datasheet } = caseStudy[0]
+
+  const cleanHTML = DOMPurify.sanitize(overview, {
+    USE_PROFILES: { html: true },
+  });
 
   return (
     <>
@@ -71,7 +74,7 @@ const CaseStudy = ({caseStudy}:any) => {
               </div>
 
               <div className="mt-6 max-w-lg sm:mx-auto md:max-w-none text-lg">
-                {overview}
+                {parse(cleanHTML)}
               </div>
             </div>
           </div>
