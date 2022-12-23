@@ -6,6 +6,12 @@ import { useSelector } from "react-redux";
 import { selectUser } from "../slices/userSlice";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import 'react-quill/dist/quill.snow.css'
+import dynamic from "next/dynamic";
+const QuillNoSSRWrapper = dynamic(import('react-quill'), {	
+    ssr: false,
+    loading: () => <p>Loading ...</p>,
+})
 
 const NewCaseForm = () => {
     const [message, setMessage] = useState('');
@@ -194,6 +200,8 @@ const NewCaseForm = () => {
                     ) : null }
                     {/* <RichTextEditor value={value} onChange={handleOnChange} className="h-64" /> */}
                 </div>
+
+                <QuillNoSSRWrapper  theme="snow" value={formik.values.overview} />
 
                 <div className="flex flex-row w-full justify-start gap-4">
 

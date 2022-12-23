@@ -1,0 +1,352 @@
+{
+	"info": {
+		"_postman_id": "4a286d4f-115f-4b99-a4bc-61e4513bed8c",
+		"name": "Turing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2021947"
+	},
+	"item": [
+		{
+			"name": "Cases",
+			"item": [
+				{
+					"name": "Get Cases",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/cases",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"cases"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Case",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODQ4NDc1ZGJjZTY1MzY2ZWY4YjY5MCIsImlhdCI6MTY2OTYyOTgwNywiZXhwIjoxNjcyMjIxODA3fQ.sEho1a-4SgWIk-htWJY1pTeTR6X0xQw_U0NfeoVwVz8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"heading\": \"TEST Auth\",\r\n    \"subheading\": \"Using AI to help psychiatrists assess patients\",\r\n    \"overview\": \"Lorem ipsum dolor sit amet consectetur adipiscing elit, urna consequat felis vehicula class ultricies mollis dictumst, aenean non a in donec nulla. Phasellus ante pellentesque erat cum risus consequat imperdiet aliquam, integer placerat et turpis mi eros nec lobortis taciti, vehicula nisl litora tellus ligula porttitor metus.<br/>Vivamus integer non suscipit taciti mus etiam at primis tempor sagittis sit, euismod libero facilisi aptent elementum felis blandit cursus gravida sociis erat ante, eleifend lectus nullam dapibus netus feugiat curae curabitur est ad. Massa curae fringilla porttitor quam sollicitudin iaculis aptent leo ligula euismod dictumst, orci penatibus mauris eros etiam praesent erat volutpat posuere hac. Metus fringilla nec ullamcorper odio aliquam lacinia conubia mauris tempor, etiam ultricies proin quisque lectus sociis id tristique, integer phasellus taciti pretium adipiscing tortor sagittis ligula.<br/>Mollis pretium lorem primis senectus habitasse lectus scelerisque donec, ultricies tortor suspendisse adipiscing fusce morbi volutpat pellentesque, consectetur mi risus molestie curae malesuada cum. Dignissim lacus convallis massa mauris enim ad mattis magnis senectus montes, mollis taciti phasellus accumsan bibendum semper blandit suspendisse faucibus nibh est, metus lobortis morbi cras magna vivamus per risus fermentum. Dapibus imperdiet praesent magnis ridiculus congue gravida curabitur dictum sagittis, enim et magna sit inceptos sodales parturient pharetra mollis, aenean vel nostra tellus commodo pretium sapien sociosqu.\",\r\n        \"keyConsiderations\": [\r\n            \"test\"\r\n        ],\r\n        \"prompts\": [\r\n            { \"id\": 1, \"text\": \"Sample Text\" },\r\n            { \"id\": 2, \"text\": \"Sample Text\" },\r\n            { \"id\": 3, \"text\": \"Sample Text\" }\r\n        ],\r\n        \"datasheet\": [\r\n            { \"category\": \"Sample Category\", \"details\": \"Lorem ipsum dolor sit amet consectetur adipiscing elit, urna consequat felis vehicula class ultricies mollis dictumst, aenean non a in donec nulla. Phasellus ante pellentesque erat cum risus consequat imperdiet aliquam, integer placerat et turpis mi eros nec lobortis taciti, vehicula nisl litora tellus ligula porttitor metus\" },\r\n            { \"category\": \"Sample Category\", \"details\": \"Lorem ipsum dolor sit amet consectetur adipiscing elit, urna consequat felis vehicula class ultricies mollis dictumst, aenean non a in donec nulla. Phasellus ante pellentesque erat cum risus consequat imperdiet aliquam, integer placerat et turpis mi eros nec lobortis taciti, vehicula nisl litora tellus ligula porttitor metus\" }\r\n        ],\r\n        \"people\": [\r\n            { \"id\": 1, \"text\": \"Patients\" },\r\n            { \"id\": 2, \"text\": \"Psychiatrists\" }\r\n        ],\r\n        \"featuredImage\": \"http://localhost:5000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/cases",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"cases"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Case",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/cases/637f9140cb2b3c9371ea8529",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"cases",
+								"637f9140cb2b3c9371ea8529"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Case",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODQ4NDc1ZGJjZTY1MzY2ZWY4YjY5MCIsImlhdCI6MTY2OTYyOTgwNywiZXhwIjoxNjcyMjIxODA3fQ.sEho1a-4SgWIk-htWJY1pTeTR6X0xQw_U0NfeoVwVz8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"heading\": \"Update Test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/cases/637f9bec8c0aa87c380d1ce8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"cases",
+								"637f9bec8c0aa87c380d1ce8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Case",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODQ4NDc1ZGJjZTY1MzY2ZWY4YjY5MCIsImlhdCI6MTY2OTYyOTgwNywiZXhwIjoxNjcyMjIxODA3fQ.sEho1a-4SgWIk-htWJY1pTeTR6X0xQw_U0NfeoVwVz8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"heading\": \"TEST123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/cases/637f9bec8c0aa87c380d1ce8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"cases",
+								"637f9bec8c0aa87c380d1ce8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Rich Griffiths\",\r\n    \"email\": \"rich.griffiths89@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODQ4NDc1ZGJjZTY1MzY2ZWY4YjY5MCIsImlhdCI6MTY2OTYyOTgwNywiZXhwIjoxNjcyMjIxODA3fQ.sEho1a-4SgWIk-htWJY1pTeTR6X0xQw_U0NfeoVwVz8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"rich.griffiths89@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODQ4NDc1ZGJjZTY1MzY2ZWY4YjY5MCIsImlhdCI6MTY2OTYyOTgwNywiZXhwIjoxNjcyMjIxODA3fQ.sEho1a-4SgWIk-htWJY1pTeTR6X0xQw_U0NfeoVwVz8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/users/63848475dbce65366ef8b690",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users",
+								"63848475dbce65366ef8b690"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Single User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODQ4NDc1ZGJjZTY1MzY2ZWY4YjY5MCIsImlhdCI6MTY2OTYyOTgwNywiZXhwIjoxNjcyMjIxODA3fQ.sEho1a-4SgWIk-htWJY1pTeTR6X0xQw_U0NfeoVwVz8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"isAdmin\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/users/63848475dbce65366ef8b690",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users",
+								"63848475dbce65366ef8b690"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

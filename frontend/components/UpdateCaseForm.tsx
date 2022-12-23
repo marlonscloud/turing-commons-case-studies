@@ -6,6 +6,12 @@ import { useSelector } from "react-redux";
 import { selectUser } from "../slices/userSlice";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import 'react-quill/dist/quill.snow.css'
+import dynamic from "next/dynamic";
+const QuillNoSSRWrapper = dynamic(import('react-quill'), {	
+    ssr: false,
+    loading: () => <p>Loading ...</p>,
+})
 
 const UpdateCaseForm = ({ caseStudy }:any) => {
     const { _id, heading, subheading, slug, featuredImage, overview, keyConsiderations, people, prompts, datasheet } = caseStudy
@@ -158,7 +164,7 @@ const UpdateCaseForm = ({ caseStudy }:any) => {
 
                 </div>
                 
-                <div className="mb-6">
+                {/* <div className="mb-6">
                     <label htmlFor="overview" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Overview</label>
                     <textarea 
                     id="overview" 
@@ -172,7 +178,16 @@ const UpdateCaseForm = ({ caseStudy }:any) => {
                     {formik.errors.overview && formik.touched.overview ? (
                         <div className="text-red-500 text-sm py-2 font-semibold">{formik.errors.overview.toString()}</div>
                     ) : null }
-                    {/* <RichTextEditor value={value} onChange={handleOnChange} className="h-64" /> */}
+                </div> */}
+
+                <div className="mb-6">
+                    <label htmlFor="overview" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Overview</label>
+                    <QuillNoSSRWrapper  
+                        theme="snow" 
+                        value={formik.values.overview} 
+                        onChange={formik.handleChange} 
+                        onBlur={formik.handleBlur} 
+                    />
                 </div>
 
                 <div className="flex flex-row w-full justify-start gap-4">
