@@ -27,3 +27,10 @@ To get started you can clone this respository onto your local machine. Once adde
 npm install - This will add all the neccessary packages for the web app and the api. Once this is done you can run the follwing...again in each directory 
 
 npm run dev - For the frontend this will open the web application on http://localhost:3000 and for the backend it will run the api on http://localhost:5000
+
+
+To use the API in Postman
+- There is a Postman collection in the root directory that you can import into Postman
+GET Cases endpoints:
+- http://localhost:5000/api/cases
+- http://localhost:5000/api/cases/casestudy/peer-to-peer-support (slug name)
