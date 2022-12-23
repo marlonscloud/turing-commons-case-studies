@@ -28,6 +28,9 @@ npm install - This will add all the neccessary packages for the web app and the 
 
 npm run dev - For the frontend this will open the web application on http://localhost:3000 and for the backend it will run the api on http://localhost:5000
 
+When the site is running, you can login with:
+email: marlonscloud@gmail.com
+pw: 123456
 
 To use the API in Postman
 - There is a Postman collection in the root directory that you can import into Postman
