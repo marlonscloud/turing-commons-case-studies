@@ -32,8 +32,9 @@ When the site is running, you can login with:
 email: marlonscloud@gmail.com
 pw: 123456
 
-To use the API in Postman
+API
 - There is a Postman collection in the root directory that you can import into Postman
+- Or you can just access the endpoints in a browser
 GET Cases endpoints:
 - http://localhost:5000/api/cases
 - http://localhost:5000/api/cases/casestudy/peer-to-peer-support (slug name)
