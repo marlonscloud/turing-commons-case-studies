@@ -17,7 +17,7 @@ const RecentCases = () => {
             redirect: 'follow'
           };
           
-        const response = await fetch("https://turing-case-studies-api.azurewebsites.net", requestOptions)
+        const response = await fetch("https://turing-case-studies-api.azurewebsites.net/api/cases", requestOptions)
         const result = await response.json()
         console.log(result)
     
