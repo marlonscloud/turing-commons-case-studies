@@ -376,13 +376,18 @@ const UpdateCaseForm = ({ caseStudy }:any) => {
                                                         <option key={index} value={cat}>{cat}</option>
                                                     ))}
                                                 </Field>
-                                                <Field
+                                                {/* <Field
                                                     name={`datasheet.${index}.details`}
                                                     placeholder=""
                                                     as="textarea"
                                                     rows={6}
                                                     className="shadow-sm flex-1 bg-slate-50 border border-slate-200 text-gray-900 text-sm rounded-md p-2.5"
-                                                />
+                                                /> */}
+                                                <Field name={`datasheet.${index}.details`}>
+                                                    {({field}:any) => <QuillNoSSRWrapper  
+                                                        modules={modules} theme="snow" value={field.value} onChange={field.onChange(field.name)} placeholder="Content goes here..."
+                                                    />}
+                                                </Field>
                                                 <ErrorMessage
                                                 name={`datasheet.${index}.details`}
                                                 component="div"
