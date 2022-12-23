@@ -15,6 +15,7 @@ mongodb+srv://<username>:<password>@casestudies.8aibcpd.mongodb.net/?retryWrites
 
 DB Users
 Rich - 2AQJzTgnh6UnKQbu
+<<<<<<< HEAD
 
 ##########################################
 
@@ -35,3 +36,6 @@ For the frontend this will open the web application on http://localhost:3000 and
 
 
 
+=======
+Marlon - Testy777
+>>>>>>> 25b58c4708188b92d5abdd4a18ba1fa892e38c30
