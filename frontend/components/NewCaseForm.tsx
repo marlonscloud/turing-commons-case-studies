@@ -20,6 +20,21 @@ const NewCaseForm = () => {
     
     const categories = ['Please select one','Analysis techniques', 'Available data']
 
+    const  modules  = {
+        toolbar: [
+            [{ font: [] }],
+            [{ header: [1, 2, 3, 4, 5, 6, false] }],
+            ["bold", "italic", "underline", "strike"],
+            [{ color: [] }, { background: [] }],
+            [{ script:  "sub" }, { script:  "super" }],
+            ["blockquote", "code-block"],
+            [{ list:  "ordered" }, { list:  "bullet" }],
+            [{ indent:  "-1" }, { indent:  "+1" }, { align: [] }],
+            ["link", "image", "video"],
+            ["clean"],
+        ],
+    };
+
     const user = useSelector(selectUser)   
 
     const notify = (message:string) => { toast.success(message, {
@@ -75,10 +90,7 @@ const NewCaseForm = () => {
         onSubmit: async() => {
             console.log(formik.values)
             const { heading, subheading, slug, featureImage, overview, keyConsiderations, people, prompts, datasheet } = formik.values
-            /* TODO: 
-                Create new case study object and pass to api 
-                If 201 then show Success Else show error
-            */
+            
             const caseCreated = await submitNewCase({
                 heading,
                 subheading,
@@ -184,7 +196,7 @@ const NewCaseForm = () => {
 
                 </div>
                 
-                <div className="mb-6">
+                {/* <div className="mb-6">
                     <label htmlFor="overview" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Overview</label>
                     <textarea 
                     id="overview" 
@@ -198,10 +210,18 @@ const NewCaseForm = () => {
                     {formik.errors.overview && formik.touched.overview ? (
                         <div className="text-red-500 text-sm py-2 font-semibold">{formik.errors.overview}</div>
                     ) : null }
-                    {/* <RichTextEditor value={value} onChange={handleOnChange} className="h-64" /> */}
-                </div>
+                </div> */}
 
-                <QuillNoSSRWrapper  theme="snow" value={formik.values.overview} />
+                <div className="mb-6">
+                    <label htmlFor="overview" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Overview</label>
+                    <FormikProvider value={formik}>
+                        <Field name="overview">
+                            {({field}:any) => <QuillNoSSRWrapper  
+                                modules={modules} theme="snow" value={field.value} onChange={field.onChange(field.name)} placeholder="Content goes here..."
+                            />}
+                        </Field>
+                    </FormikProvider>
+                </div>
 
                 <div className="flex flex-row w-full justify-start gap-4">
 

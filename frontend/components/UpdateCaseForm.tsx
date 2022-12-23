@@ -8,6 +8,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import 'react-quill/dist/quill.snow.css'
 import dynamic from "next/dynamic";
+import parser from 'html-react-parser'
 const QuillNoSSRWrapper = dynamic(import('react-quill'), {	
     ssr: false,
     loading: () => <p>Loading ...</p>,
@@ -17,9 +18,24 @@ const UpdateCaseForm = ({ caseStudy }:any) => {
     const { _id, heading, subheading, slug, featuredImage, overview, keyConsiderations, people, prompts, datasheet } = caseStudy
     const [message, setMessage] = useState('');
     const [updated, setUpdated] = useState(false);
-    const [tempSlug, setTempSlug] = useState('');
+    const [value, setValue] = useState('');
     
     const categories = ['Please select one','Analysis techniques', 'Available data']
+
+    const  modules  = {
+        toolbar: [
+            [{ font: [] }],
+            [{ header: [1, 2, 3, 4, 5, 6, false] }],
+            ["bold", "italic", "underline", "strike"],
+            [{ color: [] }, { background: [] }],
+            [{ script:  "sub" }, { script:  "super" }],
+            ["blockquote", "code-block"],
+            [{ list:  "ordered" }, { list:  "bullet" }],
+            [{ indent:  "-1" }, { indent:  "+1" }, { align: [] }],
+            ["link", "image", "video"],
+            ["clean"],
+        ],
+    };
 
     const user = useSelector(selectUser)   
 
@@ -72,7 +88,7 @@ const UpdateCaseForm = ({ caseStudy }:any) => {
         onSubmit: async() => {
             console.log(formik.values)
             const { heading, subheading, featureImage, overview, keyConsiderations, people, prompts, datasheet } = formik.values
-            
+
             const newCaseDetails = {
                 heading,
                 subheading,
@@ -182,12 +198,13 @@ const UpdateCaseForm = ({ caseStudy }:any) => {
 
                 <div className="mb-6">
                     <label htmlFor="overview" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Overview</label>
-                    <QuillNoSSRWrapper  
-                        theme="snow" 
-                        value={formik.values.overview} 
-                        onChange={formik.handleChange} 
-                        onBlur={formik.handleBlur} 
-                    />
+                    <FormikProvider value={formik}>
+                        <Field name="overview">
+                            {({field}:any) => <QuillNoSSRWrapper  
+                                modules={modules} theme="snow" value={field.value} onChange={field.onChange(field.name)} placeholder="Content goes here..."
+                            />}
+                        </Field>
+                    </FormikProvider>
                 </div>
 
                 <div className="flex flex-row w-full justify-start gap-4">
