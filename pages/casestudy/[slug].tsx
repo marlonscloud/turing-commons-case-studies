@@ -88,7 +88,7 @@ const CaseStudy = ({caseStudy}:any) => {
     <div className='flex w-full flex-wrap'>
       <div id="KeyConsiderations" className='w-full sm:w-1/2 p-16 bg-slate-600 text-white'>
         <p className="text-2xl font-bold tracking-tight">Key Considerations</p>
-        <div className='my-6'>
+        <div className='py-6'>
           {keyConsiderations.length > 0 && keyConsiderations.map((kc:any, index:any) => (
             <div key={index} className="flex flex-row justify-start items-start gap-4 my-6">
               <div className="hidden sm:flex h-10 w-10 items-center justify-center rounded-xl bg-slate-500 text-white sm:shrink-0">
