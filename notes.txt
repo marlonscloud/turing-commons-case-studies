@@ -15,3 +15,23 @@ mongodb+srv://<username>:<password>@casestudies.8aibcpd.mongodb.net/?retryWrites
 
 DB Users
 Rich - 2AQJzTgnh6UnKQbu
+
+##########################################
+
+Installation
+
+Getting Started
+
+To get started you can clone this respository onto your local machine. Once added you will need to access each folder (Frontend and Backend) throught the terminal and run the following command in each.
+
+npm install
+
+This will add all the neccessary packages for the web app and the api. Once this is done you can run the follwing...again in each directory. 
+
+npm run dev
+
+For the frontend this will open the web application on http://localhost:3000 and for the backend it will run the api on http://localhost:5000.
+
+
+
+
