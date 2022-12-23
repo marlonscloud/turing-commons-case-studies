@@ -36,9 +36,15 @@ API
 - There is a Postman collection in the root directory that you can import into Postman
 - Or you can just access the endpoints in a browser
 GET Cases endpoints:
-- http://localhost:5000/api/cases
-- http://localhost:5000/api/cases/casestudy/peer-to-peer-support (slug name)
+- https://turing-case-studies-api.azurewebsites.net/api/cases
+- https://turing-case-studies-api.azurewebsites.net/api/cases/casestudy/peer-to-peer-support (slug name)
 
+Case study management website:
+https://turing-case-studies.azurewebsites.net
+you can login with:
+email: marlonscloud@gmail.com
+pw: 123456
 
-Azure API
-https://turing-case-studies-api.azurewebsites.net
+#######
+
+Note when installing MKDocs on windows. Cmd: python -m mkdocs new test-project
