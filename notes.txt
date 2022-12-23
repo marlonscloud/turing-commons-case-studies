@@ -48,3 +48,10 @@ pw: 123456
 #######
 
 Note when installing MKDocs on windows. Cmd: python -m mkdocs new test-project
+
+#######
+MKdocs Integration:
+- Add a reference to the extra_javascript section in the mkdocs.yml file (has already been done with a table sort JS file) to javascripts/case-studies.js
+- Do as above, but add Jquery via the public Google CDN
+- In the case-studies JS file, edit the fetchAsync URL parameter as desired (line 8), also edit the html that is updated as desired (line 13)
+- AFTER running python -m mkdocs build, add an HTML element to an HTML page with an ID from the above case-studies JS, i.e. 'case-study'
