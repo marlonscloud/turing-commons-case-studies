@@ -34,23 +34,25 @@ const UserData = ({userData}:any) => {
 }
 
 const fetchUsers = async () => {  
+  let apiUrl = process.env.NEXT_PUBLIC_API_URL
   var requestOptions: RequestInit = {
     method: 'GET',
     redirect: 'follow'
   };
   
-  const response = await fetch("https://turing-case-studies-api.azurewebsites.net/api/users", requestOptions)
+  const response = await fetch(`${apiUrl}/users`, requestOptions)
   const result = await response.json()
   return result
 }
 
 const fetchUser = async (id:any) => {
+  let apiUrl = process.env.NEXT_PUBLIC_API_URL
   var requestOptions: RequestInit = {
     method: 'GET',
     redirect: 'follow'
   };
 
-  const response = await fetch(`https://turing-case-studies-api.azurewebsites.net/api/users/${id}`, requestOptions)
+  const response = await fetch(`${apiUrl}/users/${id}`, requestOptions)
   const result = await response.json()
   return result
 }

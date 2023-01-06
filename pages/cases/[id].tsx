@@ -32,23 +32,25 @@ const CaseStudy = ({caseStudy}:any) => {
 }
 
 const fetchCaseStudies = async () => {
+    let apiUrl = process.env.NEXT_PUBLIC_API_URL
     var requestOptions: RequestInit = {
         method: 'GET',
         redirect: 'follow'
       };
       
-    const response = await fetch("https://turing-case-studies-api.azurewebsites.net/api/cases", requestOptions)
+    const response = await fetch(`${apiUrl}/cases`, requestOptions)
     const result = await response.json()
     return result
 }
 
 const fetchCaseStudy = async (id:any) => {
+  let apiUrl = process.env.NEXT_PUBLIC_API_URL
   var requestOptions: RequestInit = {
       method: 'GET',
       redirect: 'follow'
     };
     
-  const response = await fetch(`https://turing-case-studies-api.azurewebsites.net/api/cases/${id}`, requestOptions)
+  const response = await fetch(`${apiUrl}/cases/${id}`, requestOptions)
   const result = await response.json()
   return result
 }
