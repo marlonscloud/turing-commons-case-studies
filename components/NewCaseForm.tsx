@@ -128,7 +128,7 @@ const NewCaseForm = () => {
             <div hidden={!submitted}><Alert message={message} /></div>       
             
             <form onSubmit={formik.handleSubmit}>
-                <div className="flex flex-row w-full justify-start gap-4">
+                <div className="flex flex-row w-full justify-start gap-4 mb-4">
                     {/* Heading */}
                     <div className="mb-6 w-full">
                         <label htmlFor="heading" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Heading</label>
@@ -163,7 +163,7 @@ const NewCaseForm = () => {
                     </div> */}
                 </div>
 
-                <div className="flex flex-row w-full justify-start gap-4">
+                <div className="flex flex-row w-full justify-start gap-4 mb-4">
                     {/* Sub Heading */}
                     <div className="mb-6 w-full">
                         <label htmlFor="subheading" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Sub Heading</label>
@@ -214,7 +214,7 @@ const NewCaseForm = () => {
                     ) : null }
                 </div> */}
 
-                <div className="mb-6">
+                <div className="mb-12">
                     <label htmlFor="overview" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Overview</label>
                     <FormikProvider value={formik}>
                         <Field name="overview">
@@ -394,13 +394,18 @@ const NewCaseForm = () => {
                                                         <option key={index} value={cat}>{cat}</option>
                                                     ))}
                                                 </Field>
-                                                <Field
+                                                {/* <Field
                                                     name={`datasheet.${index}.details`}
                                                     placeholder=""
                                                     as="textarea"
                                                     rows={6}
                                                     className="shadow-sm flex-1 bg-slate-50 border border-slate-200 text-gray-900 text-sm rounded-md p-2.5"
-                                                />
+                                                /> */}
+                                                <Field name={`datasheet.${index}.details`}>
+                                                    {({field}:any) => <QuillNoSSRWrapper  
+                                                        modules={modules} theme="snow" value={field.value} onChange={field.onChange(field.name)} placeholder="Content goes here..."
+                                                    />}
+                                                </Field>
                                                 <ErrorMessage
                                                 name={`datasheet.${index}.details`}
                                                 component="div"

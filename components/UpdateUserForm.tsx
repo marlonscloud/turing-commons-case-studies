@@ -153,25 +153,25 @@ const UpdateUserForm = ({ userData }:any) => {
 
                     <FormikProvider value={formik}>
                         <ul role="group" aria-labelledby="checkbox-group" className="flex justify-center items-center w-full text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 sm:flex dark:bg-gray-700 dark:border-gray-600 dark:text-white">
-                            <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
+                            <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600 list-none">
                                 <div className="flex items-center pl-3">
                                     <Field id="full-admin" type="checkbox" name="roles" value="Full Admin" className="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" />
                                     <label htmlFor="full-admin" className="py-3 ml-2 w-full text-sm font-medium text-gray-900 dark:text-gray-300">Full Admin</label>
                                 </div>
                             </li>
-                            <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
+                            <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600 list-none">
                                 <div className="flex items-center pl-3">
                                     <Field id="admin" type="checkbox" name="roles" value="Admin" className="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" />
                                     <label htmlFor="admin" className="py-3 ml-2 w-full text-sm font-medium text-gray-900 dark:text-gray-300">Admin</label>
                                 </div>
                             </li>
-                            <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
+                            <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600 list-none">
                                 <div className="flex items-center pl-3">
                                     <Field id="editor" type="checkbox" name="roles" value="Editor" className="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" />
                                     <label htmlFor="editor" className="py-3 ml-2 w-full text-sm font-medium text-gray-900 dark:text-gray-300">Editor</label>
                                 </div>
                             </li>
-                            <li className="w-full dark:border-gray-600">
+                            <li className="w-full dark:border-gray-600 list-none">
                                 <div className="flex items-center pl-3">
                                     <Field id="viewer" type="checkbox" name="roles" value="Viewer" className="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" />
                                     <label htmlFor="viewer" className="py-3 ml-2 w-full text-sm font-medium text-gray-900 dark:text-gray-300">Viewer</label>

@@ -127,7 +127,7 @@ const UpdateCaseForm = ({ caseStudy }:any) => {
             <div hidden={!updated}><Alert message={message} /></div>       
             
             <form onSubmit={formik.handleSubmit}>
-                <div className="flex flex-row w-full justify-start gap-4">
+                <div className="flex flex-row w-full justify-start gap-4 mb-4">
                     {/* Heading */}
                     <div className="mb-6 w-full">
                         <label htmlFor="heading" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Heading</label>
@@ -146,7 +146,7 @@ const UpdateCaseForm = ({ caseStudy }:any) => {
                     </div>
                 </div>
 
-                <div className="flex flex-row w-full justify-start gap-4">
+                <div className="flex flex-row w-full justify-start gap-4 mb-4">
                     {/* Sub Heading */}
                     <div className="mb-6 w-full">
                         <label htmlFor="subheading" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Sub Heading</label>
@@ -197,7 +197,7 @@ const UpdateCaseForm = ({ caseStudy }:any) => {
                     ) : null }
                 </div> */}
 
-                <div className="mb-6">
+                <div className="mb-12">
                     <label htmlFor="overview" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Overview</label>
                     <FormikProvider value={formik}>
                         <Field name="overview">
