@@ -19,6 +19,7 @@ const UpdateCaseForm = ({ caseStudy }:any) => {
     const [message, setMessage] = useState('');
     const [updated, setUpdated] = useState(false);
     const [value, setValue] = useState('');
+    const apiUrl:any = process.env.NEXT_PUBLIC_API_URL
     
     const categories = ['Please select one','Analysis techniques', 'Available data']
 
@@ -68,7 +69,7 @@ const UpdateCaseForm = ({ caseStudy }:any) => {
             redirect: 'follow'
         };
 
-        const response = await fetch(`https://turing-case-studies-api.azurewebsites.net/api/cases/${_id}`, requestOptions)
+        const response = await fetch(`${apiUrl}/cases/${_id}`, requestOptions)
         const result = await response.json()
         return result          
     }

@@ -9,15 +9,17 @@ import 'react-toastify/dist/ReactToastify.css';
 const RecentCases = () => {
     const [cases, setCases] = useState<any[]>([])
     const user = useSelector(selectUser)
+    const apiUrl:any = process.env.NEXT_PUBLIC_API_URL
 
     useEffect(() => {
       const fetchCases = async () => {
+        console.log(apiUrl)
         var requestOptions: RequestInit = {
             method: 'GET',
             redirect: 'follow'
           };
           
-        const response = await fetch("https://turing-case-studies-api.azurewebsites.net/api/cases", requestOptions)
+        const response = await fetch(apiUrl + '/cases', requestOptions)
         const result = await response.json()
         console.log(result)
     
@@ -51,7 +53,7 @@ const RecentCases = () => {
                 redirect: 'follow'
             };
 
-            const response = await fetch(`https://turing-case-studies-api.azurewebsites.net/api/cases/${id}`, requestOptions)
+            const response = await fetch(`${apiUrl}/cases/${id}`, requestOptions)
             const { message, error } = await response.json()
             
             if(message) {

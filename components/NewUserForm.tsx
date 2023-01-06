@@ -9,6 +9,8 @@ import 'react-toastify/dist/ReactToastify.css';
 const NewUserForm = () => {
     const user = useSelector(selectUser)   
 
+    const apiUrl:any = process.env.NEXT_PUBLIC_API_URL
+
     const notify = (message:string) => { toast.success(message, {
             position: "bottom-center",
             autoClose: 3000,
@@ -31,7 +33,7 @@ const NewUserForm = () => {
             redirect: 'follow'
         };
 
-        const response = await fetch("https://turing-case-studies-api.azurewebsites.net/api/users", requestOptions)
+        const response = await fetch(`${apiUrl}/users`, requestOptions)
         const result = await response.json()
         return result
     }

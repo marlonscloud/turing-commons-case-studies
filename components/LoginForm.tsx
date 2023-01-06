@@ -7,6 +7,8 @@ const LoginForm = () => {
     const [password, setPassword] = useState("")
     const [errorMessage, setErrorMessage] = useState("")
 
+    const apiUrl:any = process.env.NEXT_PUBLIC_API_URL
+
     const dispatch = useDispatch()
 
     const handleLogin = async () => {
@@ -45,7 +47,7 @@ const LoginForm = () => {
             redirect: 'follow'
         };
 
-        const response = await fetch("https://turing-case-studies-api.azurewebsites.net/api/users/login", params)
+        const response = await fetch(`${apiUrl}/users/login`, params)
         const result = await response.json()
         console.log(result)
         return result

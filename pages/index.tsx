@@ -9,6 +9,7 @@ export default function Home() {
   
   return (
     <>
+      {console.log(process.env.NEXT_PUBLIC_TEST)}
       {
         !user 
         ? 

@@ -12,6 +12,8 @@ const UserManagement = () => {
 
     const user = useSelector(selectUser)
 
+    const apiUrl:any = process.env.NEXT_PUBLIC_API_URL
+
     const notify = (message:string) => { toast.error(message, {
             position: "bottom-center",
             autoClose: 3000,
@@ -37,7 +39,7 @@ const UserManagement = () => {
                 redirect: 'follow'
             };
 
-            const response = await fetch(`https://turing-case-studies-api.azurewebsites.net/api/users/${id}`, requestOptions)
+            const response = await fetch(`${apiUrl}/users/${id}`, requestOptions)
             const { message, error } = await response.json()
             
             if(message) {
@@ -60,7 +62,7 @@ const UserManagement = () => {
               redirect: 'follow'
             };
             
-            const response = await fetch("https://turing-case-studies-api.azurewebsites.net/api/users", requestOptions)
+            const response = await fetch(`${apiUrl}/users`, requestOptions)
             const result = await response.json()
             setUsers(result)
         }

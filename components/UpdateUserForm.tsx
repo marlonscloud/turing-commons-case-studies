@@ -8,8 +8,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const UpdateUserForm = ({ userData }:any) => {
-    console.log(userData)
     const user = useSelector(selectUser)   
+    const apiUrl:any = process.env.NEXT_PUBLIC_API_URL
 
     const notify = (message:string) => { toast.success(message, {
             position: "bottom-center",
@@ -34,7 +34,7 @@ const UpdateUserForm = ({ userData }:any) => {
             redirect: 'follow'
         };
 
-        const response = await fetch(`https://turing-case-studies-api.azurewebsites.net/api/users/${userData._id}`, requestOptions)
+        const response = await fetch(`${apiUrl}/users/${userData._id}`, requestOptions)
         const result = await response.json()
         return result          
     }
